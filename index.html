@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Whitten for Nevada | Governor 2026</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Whitten for Nevada Governor 2026. Someone new, Lew – a new voice, a real choice for Nevada.">
+  <title>Whitten for Nevada – Governor 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Whitten for Nevada – Governor 2026. A new choice for Nevada, focused on honesty, accountability, and real conversations about our state's future.">
   <style>
-    /* Basic reset */
+    :root {
+      --primary: #0b3b7a;
+      --primary-dark: #06244a;
+      --accent: #d9a200;
+      --light-bg: #f4f5f7;
+      --border: #dde1e7;
+      --text: #222;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -14,163 +22,459 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: var(--text);
       line-height: 1.6;
-      color: #1f2933;
-      background-color: #f5f7fa;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
     }
 
     header {
-      background: #101827;
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
       padding: 1rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      border-bottom: 4px solid var(--accent);
     }
 
-    .nav-container {
-      max-width: 1100px;
+    .header-inner {
+      max-width: 1000px;
       margin: 0 auto;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      flex-wrap: wrap;
     }
 
-    .brand {
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .logo-main {
+      font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: 0.06em;
-      text-transform: uppercase;
+    }
+
+    .logo-sub {
       font-size: 0.9rem;
-      line-height: 1.3;
-    }
-
-    .brand span {
-      display: block;
-    }
-
-    .brand .name {
-      font-size: 1.1rem;
-    }
-
-    .brand .office {
-      font-weight: 600;
-      opacity: 0.85;
+      text-transform: uppercase;
+      opacity: 0.9;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
-      font-size: 0.95rem;
+      gap: 0.5rem;
     }
 
-    nav li a {
-      padding: 0.4rem 0.7rem;
+    nav a {
+      text-decoration: none;
+      color: #f7f9fc;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 999px;
-      transition: background 0.15s ease, color 0.15s ease;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(0,0,0,0.1);
+      transition: background 0.15s ease, transform 0.1s ease;
       white-space: nowrap;
     }
 
-    nav li a:hover,
-    nav li a:focus {
-      background: #fbbf24;
-      color: #111827;
+    nav a:hover {
+      background: rgba(0,0,0,0.25);
+      transform: translateY(-1px);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 1.5rem auto 2.5rem;
+      padding: 0 1rem;
     }
 
     .hero {
-      background: linear-gradient(120deg, #0f172a 0%, #1d4ed8 55%, #f97316 100%);
-      color: #ffffff;
-      padding: 3.5rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: stretch;
+      margin-bottom: 2rem;
     }
 
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 2.5rem;
-      align-items: center;
+    .hero-text {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.25rem;
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+      font-size: 1.6rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      color: var(--primary-dark);
+    }
+
+    .hero-slogan {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      color: #333;
+    }
+
+    .hero-body {
+      font-size: 0.95rem;
       margin-bottom: 0.75rem;
     }
 
-    .hero-subtitle {
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      opacity: 0.9;
+    .hero-bullets {
+      font-size: 0.9rem;
+      margin-left: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-bullets li {
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    .hero-photo {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #ffffff;
+    }
+
+    .photo-placeholder {
+      background: linear-gradient(135deg, #e6ebf3, #cbd3e4);
+      border-radius: 10px;
+      border: 1px dashed #a3aec3;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #4a5670;
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .photo-caption {
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    .support-card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
       margin-bottom: 1.5rem;
     }
 
-    .hero-slogan-main {
-      font-size: 1.6rem;
+    .support-title {
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
+      color: var(--primary-dark);
     }
 
-    .hero-slogan-sub {
-      font-size: 1rem;
-      opacity: 0.95;
-      max-width: 32rem;
+    .support-subtitle {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      color: #444;
     }
 
-    .hero-actions {
-      margin-top: 1.75rem;
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 1rem;
+    }
+
+    .form-full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem 0.55rem;
+      border-radius: 6px;
+      border: 1px solid #cdd3df;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(11,59,122,0.2);
+    }
+
+    .submit-row {
+      grid-column: 1 / -1;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      align-items: center;
+      gap: 0.5rem 1rem;
+      margin-top: 0.3rem;
     }
 
-    .btn {
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 0.55rem 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--primary);
+      color: #fff;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 0.7rem 1.4rem;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: 2px solid transparent;
-      cursor: pointer;
+      gap: 0.3rem;
+      transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
     }
 
-    .btn-primary {
-      background: #fbbf24;
-      color: #111827;
-      border-color: #fbbf24;
+    button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.18);
     }
 
-    .btn-primary:hover {
-      background: #fed36e;
-      border-color: #fed36e;
+    .submit-note {
+      font-size: 0.75rem;
+      color: #555;
     }
 
-    .btn-ghost {
-      background: transparent;
-      color: #e5e7eb;
-      border-color: #e5e7eb;
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
-    .btn-ghost:hover {
-      background: rgba(15, 23, 42, 0.3);
+    .card {
+      background: var(--light-bg);
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
     }
 
-    .hero-sidecard {
-      background: rgba(15, 23, 42, 0.65);
-      border-radius: 1rem;
-      padding:
+    .card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--primary-dark);
+    }
+
+    .card p {
+      font-size: 0.88rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      font-size: 0.75rem;
+      background: #fafbfc;
+    }
+
+    .footer-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+      color: #555;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      form {
+        grid-template-columns: 1fr;
+      }
+      .columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .logo-main {
+        font-size: 1.5rem;
+      }
+      header {
+        padding: 0.8rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo-block">
+        <div class="logo-main">WHITTEN NEVADA</div>
+        <div class="logo-sub">Governor 2026</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#someone-new">Someone New, Lew</a></li>
+          <li><a href="#concerns">Concerns</a></li>
+          <li><a href="#failures">Failures</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
+          <li><a href="#endorsements">Endorsements</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="top">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Whitten for Nevada</div>
+        <h1 class="hero-title">A new voice in a tired race.</h1>
+        <p class="hero-slogan"><strong>Campaign slogan:</strong> <em>"Because Nevada deserves more than the same two choices."</em></p>
+        <p class="hero-body">
+          The 2026 race for governor doesn’t have to be a rerun. My name is Lew Whitten, and I’m running for governor of Nevada to have honest conversations about what’s working, what’s failing, and what we can do differently.
+        </p>
+        <ul class="hero-bullets">
+          <li>Someone new who is willing to call out failures—no matter which party they belong to.</li>
+          <li>Focused on real concerns: cost of living, schools, seniors, and basic competence in government.</li>
+          <li>Open to listening first and talking second.</li>
+        </ul>
+        <p class="hero-note">
+          If you’re tired of politics as usual, start by saying hello below. You don’t have to agree with me on everything to be part of this campaign.
+        </p>
+      </div>
+
+      <aside class="hero-photo">
+        <div class="photo-placeholder">
+          Candidate photo coming soon.<br>
+          (This is where a picture of Lew will go.)
+        </div>
+        <p class="photo-caption">
+          A real campaign doesn’t start with a perfect image—it starts with real people willing to show up, ask questions, and tell the truth.
+        </p>
+      </aside>
+    </section>
+
+    <!-- SUPPORT / CONTACT FORM -->
+    <section class="support-card" id="volunteer">
+      <h2 class="support-title">Be the first to know what Whitten is planning.</h2>
+      <p class="support-subtitle">
+        Share a few details and we’ll keep you in the loop as this campaign takes shape. Whether you just want updates or you’re willing to knock on doors later, this is where it starts.
+      </p>
+
+      <!-- NOTE: This uses mailto: which opens the visitor's email program.
+           Later, you can switch to a real form backend (Formspree, Google Form, etc.) -->
+      <form action="mailto:whittenfornevada@gmail.com" method="POST" enctype="text/plain">
+        <div>
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="Name" required>
+        </div>
+
+        <div>
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="Email" required>
+        </div>
+
+        <div>
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="Phone">
+        </div>
+
+        <div>
+          <label for="zip">ZIP Code (optional)</label>
+          <input type="text" id="zip" name="ZIP">
+        </div>
+
+        <div class="form-full">
+          <label for="message">How would you like to be involved? (optional)</label>
+          <textarea id="message" name="Message" placeholder="Example: keep me updated / I might volunteer / I have a concern you should hear about."></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit">
+            I’m Interested
+          </button>
+          <span class="submit-note">
+            This will open your email app with your information ready to send to <strong>whittenfornevada@gmail.com</strong>.
+          </span>
+        </div>
+      </form>
+    </section>
+
+    <!-- THREE MAIN CARDS -->
+    <section class="columns">
+      <article class="card" id="someone-new">
+        <h2>Someone New, Lew</h2>
+        <p>
+          You already know the usual names. My goal is not to be the third version of the same thing—it’s to bring a different perspective. I’m running because I believe ordinary Nevadans should have at least one option on the ballot who is not owned by the usual machine.
+        </p>
+      </article>
+
+      <article class="card" id="concerns">
+        <h2>Concerns</h2>
+        <p>
+          Cost of living, housing, schools, mental health, seniors on fixed incomes, waste and confusion in state agencies—these are not talking points to me. Over the coming months, this section will grow with specific concerns I’m hearing from Nevadans and what I think we can do about them.
+        </p>
+      </article>
+
+      <article class="card" id="failures">
+        <h2>Failures</h2>
+        <p>
+          Both parties have had their turn at the wheel. Both have things to answer for. This campaign is willing to say plainly where our government is failing and who is responsible—without pretending that one party has all the answers.
+        </p>
+      </article>
+    </section>
+
+    <!-- PLACEHOLDER SECTIONS FOR LATER PAGES -->
+    <section style="margin-top: 1.75rem;">
+      <article class="card" id="endorsements">
+        <h2>Endorsements</h2>
+        <p>
+          This campaign is just getting started. Endorsements will be listed here as people and organizations publicly choose to stand with Whitten for Nevada.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>Paid for by Whitten for Nevada (exploratory).</div>
+      <div>Contact: <a href="mailto:whittenfornevada@gmail.com">whittenfornevada@gmail.com</a></div>
+    </div>
+  </footer>
+</body>
+</html>
