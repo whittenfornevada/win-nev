@@ -471,11 +471,20 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>Paid for by Whitten for Nevada (exploratory).</div>
-      <div>Contact: <a href="mailto:whittenfornevada@gmail.com">whittenfornevada@gmail.com</a></div>
-    </div>
-  </footer>
+<div id="footer-container"></div>
+
+<script>
+  fetch('/footer.html')
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (html) {
+      document.getElementById('footer-container').innerHTML = html;
+    })
+    .catch(function (err) {
+      console.error('Footer load error:', err);
+    });
+</script>
+
 </body>
 </html>
